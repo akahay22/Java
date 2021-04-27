@@ -1,0 +1,50 @@
+<%@page import="com.java.mphasis.canteen.ConnectionHelper"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<br/>
+<%
+  String user=(String)session.getAttribute("user");
+  out.println("Welcome <b>" +user+"</b>");
+  
+%>
+<br/><br/>
+
+<%
+//String user=(String)session.getAttribute("user");
+Connection con = ConnectionHelper.getconnection();
+String sql = " SELECT * FROM customer "; 			
+PreparedStatement ps = con.prepareStatement(sql);			
+ResultSet rs = ps.executeQuery();
+
+out.println("<table border='3'>");
+out.println("<tr>");
+out.println("<th>CUS_ID</th>");
+out.println("<th>CUS_NAME</th>");
+out.println("<th>CUS_EMAIL</th>");
+out.println("<th>CUS_DOB</th>");
+out.println("<th>CUS_ADDRESS</th>");
+
+while(rs.next()){
+	out.println("<tr><td>");
+	out.println(rs.getString("CUS_ID") + "</td>");
+	out.println("<td>" +rs.getString("CUS_NAME")); 
+	out.println("<td>" +rs.getString("CUS_EMAIL"));
+	out.println("<td>" +rs.getString("CUS_DOB")); 
+	out.println("<td>"+rs.getString("CUS_ADDRESS") + "</td></tr>");
+}
+out.println("</table>");
+%>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+package com.java.mphasis.col;
+import java.util.Comparator;
+public class BasicComparator implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        Employ e1 = (Employ)o1;
+        Employ e2 = (Employ)o2;
+        if (e1.basic >= e2.basic) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+}
+
+from Prasanna to everyone:    10:57 AM
+package com.java.mphasis.col;
+import java.util.Comparator;
+public class NameComparator implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        Employ e1 = (Employ)o1;
+        Employ e2 = (Employ)o2;
+        return e2.name.compareTo(e1.name);
+    }
+}
+
+from Prasanna to everyone:    10:58 AM
+package com.java.mphasis.col;
+import java.util.Comparator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+public class SortEmploy {
+    public static void main(String[] args) {
+        Comparator c = new NameComparator();
+        //Comparator c = new BasicComparator();
+        SortedSet employs = new TreeSet(c);
+        employs.add(new Employ(3, "Lalith", 56522));
+        employs.add(new Employ(1, "Charan", 86234));
+        employs.add(new Employ(2, "Nilesh", 76333));
+        employs.add(new Employ(4, "Ranjan", 67553));
+        employs.add(new Employ(5, "Hari Bhanu", 61122));
+        
+        for (Object ob : employs) {
+            Employ e = (Employ)ob;
+            System.out.println(e);
+        }
+    }
+}
