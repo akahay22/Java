@@ -1,0 +1,21 @@
+1)    What is the purpose of hashCode() 
+2)    What is the purpose of toString()
+3)    What is constructor and what are types of constructors
+4)    Explain about enum in detail
+5)    What is the difference between interface and abstract class, explain practically
+
+
+
+1) Abstract class can have abstract and non-abstract methods.   	        Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2) Abstract class doesn't support multiple inheritance.	                        Interface supports multiple inheritance.
+3) Abstract class can have final, non-final, static and non-static variables.	Interface has only static and final variables.
+4) Abstract class can provide the implementation of interface.	                Interface can't provide the implementation of abstract class.
+5) The abstract keyword is used to declare abstract class.	                The interface keyword is used to declare interface.
+6) An abstract class can extend another Java class and implement multiple Java interfaces.	An interface can extend another Java interface only.
+
+
+
+
+
+
+A toString() is an in-built method in Java that returns the value given to it in string format. Hence, any object that this method is applied on, will then be returned as a string object.

@@ -1,0 +1,24 @@
+package com.java.mphasis.ex;
+class VotingException extends Exception {
+    VotingException(String error) {
+        super(error);
+    }
+}
+public class VotingEx {
+    public void check(int age) throws VotingException {
+        if (age < 18) {
+            throw new VotingException("You are not Elligible for voting...");
+        } else {
+            System.out.println("You are Elligible for Voting...");
+        }
+    }
+    
+    public static void main(String[] args) {
+        VotingEx obj = new VotingEx();
+        try {
+            obj.check(19);
+        } catch (VotingException e) {
+            e.printStackTrace();
+        }
+    }
+}
