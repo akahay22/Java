@@ -1,0 +1,42 @@
+1> hello 3
+   test 4
+   demo 5
+   default message
+
+2> Error 
+
+3> Error incompatible type
+
+4> 1,2,3
+
+5> 21.0
+
+6> 3,3,3
+
+7> Error (non staic variable can not be referenced from static method)
+
+8>  True (String matched)
+
+9> 
+
+10> Error
+
+11>
+
+12> Hello i like java
+
+13> Error (cannot inherit)
+
+14> 11
+
+15> Hi
+
+16> 
+
+17> False
+
+18> 
+ 
+19> Error (bad opreand)
+
+20> Flase,Trur,True
